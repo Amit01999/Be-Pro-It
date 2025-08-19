@@ -68,7 +68,7 @@ const portfolioItems = [
   },
   {
     id: 4,
-    title: 'Khandker & Hossain (K. Hossain)',
+    title: 'Dr. Kamal Hossain & Associates',
     description:
       'Established in 1980, one of the largest law firms in Bangladesh offering comprehensive legal services with 40+ years of institutional experience.',
     img: img4,
