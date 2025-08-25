@@ -3,10 +3,16 @@ import CodeBlocks from './CodeBlocks';
 import HighlightText from './design/HighlightText';
 import Section from './Section';
 
-const AboutUs = () => {
+const AboutUs = ({ sectionRefs }) => {
+  // scroll helper
+  const scrollToSection = section => {
+    sectionRefs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Section id="features">
       <div className="container relative z-2">
+        {/* Who We Are */}
         <div>
           <CodeBlocks
             position={'lg:flex-row'}
@@ -18,15 +24,15 @@ const AboutUs = () => {
             subheading={
               'BePro IT is a full-service technology partner, delivering world-class web development, software engineering, IT consultancy, and training solutions for businesses, startups, and government organizations. We combine cutting-edge technology, proven methodologies, and deep industry knowledge to help our clients achieve digital transformation with measurable impact.'
             }
-            ctabtn1={{
-              btnText: 'Our Services',
-              linkto: '/services',
-              active: true,
-            }}
+            // ctabtn1={{
+            //   btnText: 'Our Services',
+            //   onClick: () => scrollToSection('benefits'), // scroll
+            //   active: true,
+            // }}
             ctabtn2={{
-              btnText: 'Contact Us',
-              linkto: '/contact',
-              active: false,
+              btnText: 'Schedule Free Consultation',
+              linkto: 'https://calendar.app.google/TyHZuwgs37EGZxW38', // external
+              active: true,
             }}
             codeblock={`// BePro IT: Digital Transformation Partner
 const beproIT = {
@@ -47,6 +53,7 @@ beproIT.approach();`}
           />
         </div>
 
+        {/* Mission & Vision */}
         <div>
           <CodeBlocks
             position={'lg:flex-row-reverse'}
@@ -58,12 +65,17 @@ beproIT.approach();`}
             subheading={
               'Our Mission: To empower organizations with innovative, reliable, and customized IT solutions that enhance efficiency, accelerate growth, and strengthen digital competitiveness.\n\nOur Vision: To be the most trusted IT partner in Bangladesh and beyond, known for excellence in technology, service, and client success.'
             }
-            ctabtn1={{
-              btnText: 'Work With Us',
-              linkto: '/contact',
+            // ctabtn1={{
+            //   btnText: 'Work With Us',
+            //   onClick: () => scrollToSection('contact'), // 👈 scroll to Contact
+            //   active: true,
+            // }}
+            ctabtn2={{
+              btnText: 'Schedule Free Consultation',
+              linkto: 'https://calendar.app.google/TyHZuwgs37EGZxW38', // 👈 external link
+              external: true,
               active: true,
             }}
-            ctabtn2={{ btnText: 'Learn More', linkto: '/about', active: false }}
             codeblock={`// Mission & Vision at BePro IT
 const mission = "Empower organizations with innovative & reliable IT solutions.";
 const vision = "Be the most trusted IT partner in Bangladesh and beyond.";

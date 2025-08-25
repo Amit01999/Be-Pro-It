@@ -6,7 +6,7 @@ const CustomButton = ({ active, linkto, children }) => {
   return (
     <a
       href={linkto}
-      className={`px-6 py-2.5 rounded-2xl font-semibold flex items-center gap-2 transition-all duration-300 shadow-md
+      className={`px-6 py-2.5 rounded-2xl font-semibold flex items-center gap-2 transition-all duration-300 shadow-md 
         ${
           active
             ? 'bg-[#00FFD1] text-black hover:bg-[#00e6bd] hover:shadow-lg hover:scale-105'
@@ -38,8 +38,25 @@ const CodeBlocks = ({
         <div className="text-gray-400 text-base font-bold w-[85%] -mt-3">
           {subheading}
         </div>
-
         <div className="flex gap-7 mt-7">
+          {/* <CustomButton
+            active={ctabtn1.active}
+            linkto={ctabtn1.linkto}
+            onClick={ctabtn1.onClick} // ✅ support scroll
+          >
+            {ctabtn1.btnText} <ArrowRight className="w-4 h-4" />
+          </CustomButton> */}
+
+          <CustomButton
+            active={ctabtn2.active}
+            linkto={ctabtn2.linkto}
+            onClick={ctabtn2.onClick} // ✅ support scroll
+          >
+            {ctabtn2.btnText}
+          </CustomButton>
+        </div>
+
+        {/* <div className="flex gap-7 mt-7">
           <CustomButton active={ctabtn1.active} linkto={ctabtn1.linkto}>
             {ctabtn1.btnText} <ArrowRight className="w-4 h-4" />
           </CustomButton>
@@ -47,7 +64,7 @@ const CodeBlocks = ({
           <CustomButton active={ctabtn2.active} linkto={ctabtn2.linkto}>
             {ctabtn2.btnText}
           </CustomButton>
-        </div>
+        </div> */}
       </div>
 
       {/* Right part */}

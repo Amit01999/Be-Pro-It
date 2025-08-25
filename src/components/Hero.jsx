@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import HeroSection1 from './design/HeroSecton1';
 
-const Hero = () => {
+const Hero = ({ sectionRefs }) => {
   const parallaxRef = useRef(null);
 
   return (
@@ -33,7 +33,7 @@ const Hero = () => {
     >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1  mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
-          <HeroSection1 />
+          <HeroSection1 sectionRefs={sectionRefs} />
         </div>
         {/* <div className="relative max-w-[30rem] mx-auto md:max-w-7xl xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
