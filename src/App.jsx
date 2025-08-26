@@ -5,6 +5,9 @@ import SoftwareDevelopment from './Pages/ServicesPage/SoftwareDevelopment';
 import ItConsultancy from './Pages/ServicesPage/ItConsultancy';
 import AdditionalServices from './Pages/ServicesPage/AdditionalServices';
 import ItTraining from './Pages/ServicesPage/ItTraining';
+import CareersPage from './Pages/CareersPage';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import TermsConditions from './Pages/TermsConditions';
 
 const App = () => {
   return (
@@ -12,6 +15,7 @@ const App = () => {
       <Routes>
         {/* Landing page shown at "/" */}
         <Route path="/" element={<HomePage />} />
+        <Route path="/careers" element={<CareersPage />} />
         <Route
           path="/services/web-development"
           element={<WebDevelopmentPage />}
@@ -26,6 +30,8 @@ const App = () => {
           path="/services/additional-services"
           element={<AdditionalServices />}
         />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
 
         {/* Add more routes later, e.g.: */}
       </Routes>

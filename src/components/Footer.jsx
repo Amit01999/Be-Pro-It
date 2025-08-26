@@ -2,11 +2,12 @@ import React from 'react';
 import Section from './Section';
 import { Facebook, Twitter, Linkedin, Github } from 'lucide-react';
 import logo from '../assets/logo1.png';
+import { Link } from 'react-router-dom';
 
 // Quick links
 const quickLinks = [
   { name: 'Home', id: 'home' },
-  { name: 'About Us', id: 'about' },
+  { name: 'About Us', id: 'features' },
   { name: 'Services', id: 'services' },
   { name: 'Portfolio', id: 'portfolio' },
   { name: 'Careers', id: 'careers' },
@@ -15,12 +16,11 @@ const quickLinks = [
 
 // Services
 const services = [
-  'Web Development',
-  'Software Development',
-  'IT Consultancy',
-  'IT Training',
-  'Cloud Solutions',
-  'Security Audits',
+  { title: 'Web Development', link: '/services/web-development' },
+  { title: 'Software Development', link: '/services/software-development' },
+  { title: 'IT Consultancy', link: '/services/it-consultancy' },
+  { title: 'IT Training', link: '/services/it-training' },
+  { title: 'Additional Services', link: '/services/additional-services' },
 ];
 
 // Socials
@@ -34,13 +34,12 @@ const socialLinks = [
 export default function Footer() {
   return (
     <>
-      {/* ================= Full Footer ================= */}
       <Section
         id="footer"
         className="text-white !px-0"
         crosses
         crossesOffset="translate-y-16"
-        customPaddings="pt-10 md:pt-16 lg:pt-20 pb-0" // 👈 removes bottom gap
+        customPaddings="pt-10 md:pt-16 lg:pt-20 pb-0"
       >
         <div className="max-w-7xl mx-auto flex flex-col gap-12 px-6 md:px-12">
           {/* Top row */}
@@ -98,27 +97,35 @@ export default function Footer() {
           <div className="flex flex-wrap gap-3 items-center">
             <span className="text-sm font-light">Our Services:</span>
             {services.map((service, i) => (
-              <span
+              <a
                 key={i}
+                href={service.link}
                 className="px-4 py-2 text-sm border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
               >
-                {service}
-              </span>
+                {service.title}
+              </a>
             ))}
           </div>
 
           {/* Bottom row */}
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4 border-t border-gray-700 pt-6 mb-10">
             <p>
-              © {new Date().getFullYear()} TechCompany. All rights reserved.
+              © {new Date().getFullYear()} BePro Training and Consultancy. All
+              rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-gray-300 transition">
+              <Link
+                to="/privacy-policy"
+                className="hover:text-gray-300 transition"
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-gray-300 transition">
+              </Link>
+              <Link
+                to="/terms-conditions"
+                className="hover:text-gray-300 transition"
+              >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

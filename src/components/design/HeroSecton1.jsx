@@ -17,7 +17,7 @@ const HeroSection1 = ({ sectionRefs }) => {
   return (
     <section
       id="home"
-      className="dark-full-container min-h-screen flex items-center relative px-4 md:px-8"
+      className="dark-full-container min-h-[80vh] flex items-center relative px-4 md:px-8"
     >
       <div className="dark-content-container flex flex-col md:flex-row items-center gap-8 md:gap-16 z-20 w-full">
         {/* Left Content */}
@@ -68,12 +68,12 @@ const HeroSection1 = ({ sectionRefs }) => {
 
         {/* Right 3D Visual */}
         <div className="flex-1 flex justify-center items-center">
-          {/* <div className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] relative">
+          <div className=" w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] relative">
             <Spline
               scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode"
               className="w-full h-full"
             />
-          </div> */}
+          </div>
         </div>
       </div>
 

@@ -60,7 +60,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: 'Khulna, Bangladesh',
+      details: 'House 6 (5th Floor), Road 2/B, J Block, Baridhara. Dhaka 1212.',
       link: '#',
     },
     { icon: Clock, title: 'Hours', details: 'Mon-Fri: 9AM-6PM EST', link: '#' },
@@ -252,9 +252,13 @@ const Contact = () => {
                 Schedule a free consultation to discuss your project
                 requirements and how we can help bring your vision to life.
               </p>
-              <button className="px-6 py-3 bg-[#00FFD1] text-black rounded-lg hover:opacity-90 transition">
+              <a
+                href="https://calendar.app.google/TyHZuwgs37EGZxW38 
+"
+                className="px-6 py-3 bg-[#00FFD1] text-black rounded-lg hover:opacity-90 transition"
+              >
                 Schedule Free Consultation
-              </button>
+              </a>
             </div>
           </div>
         </div>

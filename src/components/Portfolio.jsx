@@ -109,7 +109,7 @@ const cardVariants = (direction = 'left') => ({
 
 const Portfolio = () => {
   return (
-    <Section>
+    <Section id="portfolio">
       {/* Section Heading */}
       <div className="text-center mb-3">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">

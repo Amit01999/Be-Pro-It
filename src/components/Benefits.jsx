@@ -75,7 +75,7 @@ const cardVariants = {
 
 const Benefits = () => {
   return (
-    <Section id="features">
+    <Section id="services">
       <div className="container relative z-2">
         <h2 className="text-4xl lg:text-5xl font-bold mb-16 mx-auto text-center">
           Our Core IT <span className="text-[#00FFD1]">Services</span>

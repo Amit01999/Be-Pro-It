@@ -7,7 +7,7 @@ export default function TypewriterTitle({
     { text: 'Tech Experiences', deleteAfter: true },
     { text: 'Business Systems', deleteAfter: false },
   ],
-  typingSpeed = 50,
+  typingSpeed = 60,
   startDelay = 500,
   autoLoop = true,
   loopDelay = 2000,
