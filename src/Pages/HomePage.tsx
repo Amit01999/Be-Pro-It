@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
@@ -9,39 +10,38 @@ import Footer from '../components/Footer';
 import ButtonGradient from '../assets/svg/ButtonGradient';
 
 const HomePage = () => {
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const benefitsRef = useRef(null); // 👈 add this
-  const portfolioRef = useRef(null);
-  const careersRef = useRef(null);
-  const contactRef = useRef(null);
+  const location = useLocation();
 
-  const sectionRefs = {
-    hero: heroRef,
-    about: aboutRef,
-    benefits: benefitsRef, // 👈 add this
-    portfolio: portfolioRef,
-    careers: careersRef,
-    contact: contactRef,
-  };
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace('#', '');
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Scroll to top if no hash
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
 
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header sectionRefs={sectionRefs} />
-        <div ref={heroRef}>
-          <Hero sectionRefs={sectionRefs} />
+        <Header />
+        <div id="hero">
+          <Hero sectionRefs={undefined} />
         </div>
-        <div ref={aboutRef}>
-          <AboutUs sectionRefs={sectionRefs} />
+        <div id="about">
+          <AboutUs sectionRefs={undefined} />
         </div>
-        <div ref={benefitsRef}>
+        <div id="benefits">
           <Benefits />
         </div>
-        <div ref={portfolioRef}>
+        <div id="portfolio">
           <Portfolio />
         </div>
-        <div ref={contactRef}>
+        <div id="contact">
           <Contact />
         </div>
         <Footer />

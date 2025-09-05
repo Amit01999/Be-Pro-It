@@ -13,7 +13,6 @@ const App = () => {
   return (
     <>
       <Routes>
-        {/* Landing page shown at "/" */}
         <Route path="/" element={<HomePage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route
@@ -32,8 +31,6 @@ const App = () => {
         />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
-
-        {/* Add more routes later, e.g.: */}
       </Routes>
     </>
   );
