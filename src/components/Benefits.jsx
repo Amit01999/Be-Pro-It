@@ -7,6 +7,13 @@ import ClipPath from '../assets/svg/ClipPath';
 import { Code, Laptop, Users, GraduationCap, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Import SVG assets directly
+import card1Bg from '../assets/benefits/card-1.svg';
+import card2Bg from '../assets/benefits/card-2.svg';
+import card3Bg from '../assets/benefits/card-3.svg';
+import card4Bg from '../assets/benefits/card-4.svg';
+import card5Bg from '../assets/benefits/card-5.svg';
+
 const services = [
   {
     id: 1,
@@ -15,7 +22,7 @@ const services = [
       'Modern, responsive websites built with cutting-edge technologies',
     icon: Code,
     technologies: ['React', 'Node.js', 'MongoDB', 'AWS'],
-    backgroundUrl: './src/assets/benefits/card-1.svg',
+    backgroundUrl: card1Bg,
     imageUrl: './src/assets/benefits/service-1.jpg',
     link: '/services/web-development',
   },
@@ -25,7 +32,7 @@ const services = [
     description: 'Custom software solutions tailored to your business needs',
     icon: Laptop,
     technologies: ['Python', 'Java', '.NET', 'Docker'],
-    backgroundUrl: './src/assets/benefits/card-2.svg',
+    backgroundUrl: card2Bg,
     imageUrl: './src/assets/benefits/service-2.jpg',
     light: true,
     link: '/services/software-development',
@@ -36,7 +43,7 @@ const services = [
     description: 'Strategic technology guidance for digital transformation',
     icon: Users,
     technologies: ['Cloud Strategy', 'DevOps', 'Security', 'Architecture'],
-    backgroundUrl: './src/assets/benefits/card-3.svg',
+    backgroundUrl: card3Bg,
     imageUrl: './src/assets/benefits/service-3.jpg',
     link: '/services/it-consultancy',
   },
@@ -46,7 +53,7 @@ const services = [
     description: 'Professional development programs and certification courses',
     icon: GraduationCap,
     technologies: ['Workshops', 'Bootcamps', 'Online Courses', 'Mentoring'],
-    backgroundUrl: './src/assets/benefits/card-4.svg',
+    backgroundUrl: card4Bg,
     imageUrl: './src/assets/benefits/service-4.jpg',
     light: true,
     link: '/services/it-training',
@@ -57,7 +64,7 @@ const services = [
     description: 'Comprehensive IT support and specialized solutions',
     icon: Settings,
     technologies: ['Maintenance', 'Security', 'Migration', 'Integration'],
-    backgroundUrl: './src/assets/benefits/card-5.svg',
+    backgroundUrl: card5Bg,
     imageUrl: './src/assets/benefits/service-5.jpg',
     link: '/services/additional-services',
   },
@@ -90,58 +97,73 @@ const Benefits = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={cardVariants}
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] group"
-              style={{
-                backgroundImage: `url(${item.backgroundUrl})`,
-              }}
+              className="block relative md:max-w-[24rem] group"
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] transition-transform duration-300 group-hover:scale-[1.02] pointer-events-none">
-                <h5 className="h5 mb-5">{item.title}</h5>
-                <p className="body-2 mb-6 text-n-3">{item.description}</p>
+              {/* Outer Container (removed green border) */}
+              <div className="relative p-1 rounded-3xl transition-all duration-500">
+                {/* Inner Card Container */}
+                <div
+                  className="relative rounded-[22px] bg-no-repeat bg-[length:100%_100%] overflow-hidden bg-n-8/90 backdrop-blur-sm"
+                  style={{
+                    backgroundImage: item.backgroundUrl
+                      ? `url(${item.backgroundUrl})`
+                      : 'none',
+                  }}
+                >
+                  {/* Card Content */}
+                  <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] transition-transform duration-300 group-hover:scale-[1.02] pointer-events-none">
+                    <h5 className="h5 mb-5">{item.title}</h5>
+                    <p className="body-2 mb-6 text-n-3">{item.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {item.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 rounded-md bg-n-7 text-n-1"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {item.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="text-xs px-3 py-1.5 rounded-full bg-n-7/80 text-n-1 border border-n-6/30 group-hover:border-[#00FFD1]/40 group-hover:bg-n-7 transition-all duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-                <div className="flex items-center mt-auto">
-                  <item.icon
-                    size={42}
-                    className="text-n-1 drop-shadow-lg group-hover:text-[#00FFD1] transition-colors duration-300"
-                  />
-                  <Link
-                    to={item.link}
-                    className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider flex justify-center items-center gap-1 hover:text-[#00FFD1] transition-colors duration-300 pointer-events-auto"
+                    <div className="flex items-center mt-auto">
+                      <div className="p-3 rounded-2xl bg-n-7/50 border border-n-6/30 group-hover:border-[#00FFD1]/40 group-hover:bg-n-7/70 transition-all duration-300">
+                        <item.icon
+                          size={32}
+                          className="text-n-1 drop-shadow-lg group-hover:text-[#00FFD1] transition-colors duration-300"
+                        />
+                      </div>
+                      <Link
+                        to={item.link}
+                        className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider flex justify-center items-center gap-2 px-4 py-2 rounded-xl bg-n-7/30 border border-n-6/30 hover:border-[#00FFD1]/60 hover:bg-n-7/60 hover:text-[#00FFD1] transition-all duration-300 pointer-events-auto"
+                      >
+                        <span>Explore more</span>
+                        <Arrow className="w-3 h-3" />
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Gradient Light Effect */}
+                  {item.light && <GradientLight />}
+
+                  {/* Background Overlay with Curve */}
+                  <div
+                    className="absolute inset-1 bg-n-8/20 rounded-[18px]"
+                    style={{ clipPath: 'url(#benefits)' }}
                   >
-                    <span>Explore more</span>
-                    <Arrow />
-                  </Link>
-                </div>
-              </div>
+                    <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10 rounded-[18px]">
+                      {/* background image overlay (disabled) */}
+                    </div>
+                  </div>
 
-              {item.light && <GradientLight />}
+                  {/* Decorative Glow Effect */}
+                  <div className="absolute inset-0 rounded-[22px] bg-gradient-to-br from-[#00FFD1]/5 via-transparent to-[#00E6BE]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: 'url(#benefits)' }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10">
-                  {/* {item.imageUrl && (
-                    <img
-                      src={item.imageUrl}
-                      width={380}
-                      height={362}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )} */}
+                  {/* Removed the green dot */}
                 </div>
+
+                {/* Outer Glow Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#00FFD1]/10 via-transparent to-[#00E6BE]/10 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
               </div>
 
               <ClipPath />

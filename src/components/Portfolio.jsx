@@ -124,7 +124,7 @@ const Portfolio = () => {
 
       {/* Animated Grid Pattern */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-1 p-6 px-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -138,7 +138,7 @@ const Portfolio = () => {
             <CardContainer className="inter-var">
               <CardBody
                 className="relative group/card 
-                  w-[550px] h-[480px] flex flex-col justify-between
+                  w-[520px] h-[500px] flex flex-col justify-between
                   rounded-2xl p-6 border 
                   bg-gradient-to-br from-black via-[#0A0A0A] to-[#001F1A] 
                   border-[#00E6BE]/40 
@@ -220,7 +220,7 @@ const Portfolio = () => {
       </motion.div>
 
       {/* View More Button */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-3">
         <a
           href="#"
           className="inline-block px-8 py-3 rounded-xl 

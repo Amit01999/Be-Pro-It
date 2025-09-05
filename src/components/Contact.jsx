@@ -75,7 +75,7 @@ const Contact = () => {
 
   return (
     <Section>
-      <section id="contact" className="py-10 text-white relative">
+      <section id="contact" className="py-3 text-white relative">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
