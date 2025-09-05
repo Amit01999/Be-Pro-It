@@ -67,14 +67,14 @@ const HeroSection1 = ({ sectionRefs }) => {
         </div>
 
         {/* Right 3D Visual */}
-        {/* <div className="flex-1 flex justify-center items-center">
+        <div className="flex-1 flex justify-center items-center">
           <div className=" w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] relative">
             <Spline
               scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode"
               className="w-full h-full"
             />
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* Background particles */}
